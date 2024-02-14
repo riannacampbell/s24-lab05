@@ -20,13 +20,14 @@ public class InheritanceSortedIntList extends SortedIntList {
 
     @Override
     public boolean add(int num) {
+        super.add(num);
         totalAdded++;
         return true;
     }
 
     @Override
     public boolean addAll(IntegerList list) {
-        totalAdded += list.size();
+        super.addAll(list);
         return true;
     }
 

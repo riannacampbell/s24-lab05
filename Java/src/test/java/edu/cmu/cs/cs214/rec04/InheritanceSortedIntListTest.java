@@ -67,6 +67,7 @@ public class InheritanceSortedIntListTest {
 
     // check that the total number of elements added is 2.
     assertTrue(list2.getTotalAdded() == 2);
+    System.out.println("totalAdded: " + list2.getTotalAdded());
 
     // add the first list (5 elements) to our second list (2 elements).
     list2.addAll(list1);
@@ -80,10 +81,10 @@ public class InheritanceSortedIntListTest {
      * @param list IntegerList to be printed out.
      */
     private void printList(IntegerList list) {
-    for (int i = 0; i < list.size(); i++) {
-    System.out.print(list.get(i));
-    System.out.print(", ");
-    }
-    System.out.println();
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i));
+            System.out.print(", ");
+        }
+        System.out.println();
     }
 }

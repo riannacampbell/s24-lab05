@@ -16,6 +16,7 @@ public class DelegationSortedIntList implements IntegerList {
     private int totalAdded;
 
     public DelegationSortedIntList() {
+        list = new SortedIntList();
         totalAdded = 0;
     }
 
@@ -26,11 +27,8 @@ public class DelegationSortedIntList implements IntegerList {
      * @return true if the list is changed as a result of the call
      */
     public boolean add(int num) {
-        if (list.add(num)) {
-            totalAdded++;
-            return true;
-        }
-        return false;
+        totalAdded++;
+        return list.add(num);
     }
 
     /**
@@ -40,11 +38,8 @@ public class DelegationSortedIntList implements IntegerList {
      * @return true if the list changed as a result of the call
      */
     public boolean addAll(IntegerList list) {
-        if (list.addAll(list)) {
-            totalAdded += list.size();
-            return true;
-        }
-        return false;
+        totalAdded += list.size();
+        return this.list.addAll(list);
     }
 
     /**
